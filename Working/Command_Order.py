@@ -139,9 +139,7 @@ stand_up= [
 ]
 
 
-better_step_forward=[
-       
-    
+step_forward=[
     [["j2","j6",], [60,60],0.4],
     [["j1","j5",], [110,110],0.5],
     [["j2","j6",], [45,45],0.4],
@@ -153,8 +151,32 @@ better_step_forward=[
     [["j3","j7"], [90,90],0.4],
     
     ]
+
+turn_left = [
+    [["j4","j8","j3","j7"], [60,60,70,110,],0.4],
+    [["j4","j8"], [45,45,],0.4],
     
+    [["j2","j6",], [60,60],0.4],
+    [["j3","j7","j1","j5"], [90,90,70,110],0.4],
+    [["j2","j6",], [45,45],0.4],
+    [["j4","j8","j1","j5"], [60,60,90,90],0.4],
+    [["j4","j8",], [45,45],0.4],
+    
+    
+
+
+
+
+]
     
 execute_sequence(stand_up)
+
 for i in range(8):
-    execute_sequence(better_step_forward)
+    execute_sequence(step_forward)
+
+for i in range(5):
+    execute_sequence(turn_left)
+
+for i in range(4):
+    execute_sequence(step_forward)
+
